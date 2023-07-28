@@ -1,0 +1,12 @@
+{% if reservation %}
+    <h2>Reservation Details</h2>
+    <p>Reservation ID: {{ reservation.id }}</p>
+    <p>Movie Name: {{ reservation.movie.name }}</p> 
+    <p>Date: {{ reservation.date }}</p>  
+    <p>Screen: {{ reservation.movie.cinema_hall.name }}</p>
+    <p>Seat: {{ reservation.seat }}</p> 
+{% else %}
+    <p>No reservation found.</p>
+{% endif %}
+
+<a href="{% url 'home' %}"><button>Return to Home</button></a>

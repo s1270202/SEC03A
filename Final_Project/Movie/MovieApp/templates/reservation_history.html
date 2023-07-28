@@ -1,0 +1,18 @@
+<h1>My Reservation History</h1>
+{% for reservation in reservations %}
+    <div>
+        <p>Reservation ID: {{ reservation.id }}</p>
+        <p>Movie: {{ reservation.movie.name }}</p>
+        <p>Date: {{ reservation.date }}</p>
+        <p>Screen: {{ reservation.movie.cinema_hall.name }}</p>
+        <p>Seat: {{ reservation.seat }}</p>
+        {% if reservation.user %}
+            <p>User: {{ reservation.user.username }}</p>
+        {% else %}
+            <p>Name: {{ reservation.username }}</p>
+        {% endif %}
+    </div>
+    <hr> 
+{% empty %}
+    <p>No reservations found.</p>
+{% endfor %}

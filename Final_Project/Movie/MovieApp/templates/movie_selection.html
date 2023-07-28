@@ -1,0 +1,9 @@
+<form method="post">
+    {% csrf_token %}
+    <h1>Select a Movie</h1>
+    {% for movie in movies %}
+        <input type="radio" name="movie" value="{{ movie.id }}"> {{ movie.name }}<br>
+    {% endfor %}
+    <input type="submit" value="Select">
+    </form>
+    
